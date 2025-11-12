@@ -1,0 +1,14 @@
+[build]
+  base = "client"
+  command = "pnpm install --frozen-lockfile && pnpm run build"
+  publish = "client/dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NETLIFY_USE_PNPM = "true"
+
+# Single-page app routing for Vite/React Router, etc.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
